@@ -8,6 +8,22 @@ This repository contains scripts to quickly set up a **Fedora development enviro
 
 - `install-dev-tools-v3.sh`  
   Installs development tools on Fedora including:
+    - VIM  -> would also set it as the default editor
+    - Slack (Flatpak) -> for team connection
+    - Kdenlive (Flatpak) -> for video edition
+    - Kooha (Flatpak) -> for screen recording
+    - ffmpeg -> for convert video fomat
+    - podman-desktop -> docker
+    - Python3 + pip 
+    - Go (golang)
+    - Yarn
+    - OpenShift CLI (oc)
+    - kubectl
+    - kustomize
+    - Git
+    - GitHub CLI (gh)
+    - GNOME notification plugin -> libnotify, 提供 notify-send
+    - VSCODE -> extentions for go, python, react would be installed at the same time
 - `sync-repos.sh`
   Synchronizes your Git repositories with upstream forks.
 - `repo-list.txt`

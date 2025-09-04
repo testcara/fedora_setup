@@ -7,6 +7,7 @@ show_help() {
 # 📦 Fedora 一键开发环境安装脚本
 #
 # 支持安装的软件：
+#   - VIM
 #   - Slack (Flatpak)
 #   - Kdenlive (Flatpak)
 #   - Kooha (Flatpak)
@@ -107,6 +108,30 @@ install_flatpak_if_missing "slack" "com.slack.Slack"
 install_flatpak_if_missing "kdenlive" "org.kde.kdenlive"
 install_flatpak_if_missing "kooha" "io.github.seadve.Kooha"
 install_dnf_pkg_if_missing "ffmpeg" "ffmpeg"
+
+# ==== Vim Editor ====
+echo "Setting Vim as the default editor..."
+
+# Ensure vim is installed
+if has_cmd vim; then
+  echo "Vim already installed."
+else
+  sudo dnf install -y vim
+fi
+
+# User-level environment variables
+if ! grep -q 'EDITOR=vim' ~/.bashrc; then
+  echo 'export EDITOR=vim' >> ~/.bashrc
+  echo 'export VISUAL=vim' >> ~/.bashrc
+fi
+
+# Reload bashrc for current session
+export EDITOR=vim
+export VISUAL=vim
+
+# System-wide alternatives
+sudo alternatives --install /usr/bin/editor editor /usr/bin/vim 100
+sudo alternatives --config editor
 
 # ===== Podman Desktop =====
 if has_cmd podman; then
