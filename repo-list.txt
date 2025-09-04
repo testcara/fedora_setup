@@ -2,3 +2,4 @@ git@github.com:testcara/konflux-ui.git  git@github.com:konflux-ci/konflux-ui.git
 git@github.com:testcara/react_learning.git
 git@github.com:testcara/fedora_setup.git
 git@github.com:testcara/infra-deployments.git git@github.com:redhat-appstudio/infra-deployments.git
+

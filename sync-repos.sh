@@ -16,8 +16,8 @@ set -euo pipefail
 #   - Two columns: fork + upstream
 # ============================================================
 
-REPO_LIST_FILE=${1:-}
-LOCAL_DIR=${2:-}
+REPO_LIST_FILE=$(realpath "$1")
+LOCAL_DIR=$(realpath "$2")
 
 if [[ -z "$REPO_LIST_FILE" || -z "$LOCAL_DIR" ]]; then
     echo "Usage: $0 repo-list.txt /path/to/local/dir"
